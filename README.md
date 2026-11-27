@@ -1,6 +1,6 @@
 # Wazi
 
-[![tests](https://github.com/JoylynnWamjiru/Wazi-/actions/workflows/tests.yml/badge.svg)](https://github.com/JoylynnWamjiru/Wazi-/actions/workflows/tests.yml)
+[![tests](https://github.com/JoylynnWanjiru/Wazi-/actions/workflows/tests.yml/badge.svg)](https://github.com/JoylynnWanjiru/Wazi-/actions/workflows/tests.yml)
 
 > Built during the **Democracy & AI Hackathon** — July 4th, 2026
 > Hosted by **Mozilla Foundation** & **KamiLimu**
@@ -12,7 +12,7 @@
 | Name | Role | GitHub |
 |------|------|--------|
 | Chris Waweru Gichohi | Frontend Engineer and Solutions Architect | [@chriswawerusc](https://github.com/chriswawerusc) |
-| Joyline Njeri Wanjiru | Backend and AI Engineer | [@JoylynnWamjiru](https://github.com/JoylynnWamjiru) |
+| Joyline Njeri Wanjiru | Backend and AI Engineer | [@JoylynnWanjiru](https://github.com/JoylynnWanjiru) |
 
 **Team Name:** WAZIRI
 **University:** Dedan Kimathi University Of Technology, University of Nairobi
@@ -46,33 +46,10 @@
 
 ---
 
-## Run Instructions
+## Approach & Architecture
 
-### Prerequisites
-
-- Python 3.10+
-- An Anthropic API key
-
-### Quick Start
-
-```bash
-# 1. Clone the repo
-git clone https://github.com/[org]/[repo].git
-cd [repo]
-
-# 2. Create a virtual environment
-python -m venv venv
-source venv/bin/activate   # Windows: venv\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Set environment variables
-cp .env.example .env
-# Edit .env with your API keys
-
-# 5. Run the project
-streamlit run src/app/streamlit_app.py
+```
+[Citizen on WhatsApp-style chat] → [Retrieval engine (RAG over county PDFs)] → [Grounded LLM generator, Swahili/Sheng] → [Reply with citation]
 ```
 
 ---
@@ -111,10 +88,33 @@ streamlit run src/app/streamlit_app.py
 
 ---
 
-## Approach & Architecture
+## Run Instructions
 
-```
-[Citizen on WhatsApp-style chat] → [Retrieval engine (RAG over county PDFs)] → [Grounded LLM generator, Swahili/Sheng] → [Reply with citation]
+### Prerequisites
+
+- Python 3.10+
+- An Anthropic API key
+
+### Quick Start
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/JoylynnWanjiru/Wazi-.git
+cd Wazi-
+
+# 2. Create a virtual environment
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+
+# 3. Install dependencies
+pip install -r requirements.txt
+
+# 4. Set environment variables
+cp .env.example .env
+# Edit .env with your API keys
+
+# 5. Run the project
+streamlit run src/app/streamlit_app.py
 ```
 
 ---
