@@ -2,7 +2,7 @@
 
 [![tests](https://github.com/JoylynnWanjiru/Wazi-/actions/workflows/tests.yml/badge.svg)](https://github.com/JoylynnWanjiru/Wazi-/actions/workflows/tests.yml)
 
-> Built during the **Democracy & AI Hackathon** — July 4th, 2026
+> Built during the **Democracy & AI Hackathon** — July 4, 2026
 > Hosted by **Mozilla Foundation** & **KamiLimu**
 
 ---
@@ -12,10 +12,10 @@
 | Name | Role | GitHub |
 |------|------|--------|
 | Chris Waweru Gichohi | Frontend Engineer and Solutions Architect | [@chriswawerusc](https://github.com/chriswawerusc) |
-| Joyline Njeri Wanjiru | Backend and AI Engineer | [@JoylynnWanjiru](https://github.com/JoylynnWanjiru) |
+| Joylynn Njeri Wanjiru | Backend and AI Engineer | [@JoylynnWanjiru](https://github.com/JoylynnWanjiru) |
 
 **Team Name:** WAZIRI
-**University:** Dedan Kimathi University Of Technology, University of Nairobi
+**University:** Dedan Kimathi University of Technology, University of Nairobi
 
 ---
 
@@ -59,30 +59,44 @@
 ```
 .
 ├── README.md                       ← You are here
-├── docs/
-│   └── problem-statement.md        ← Detailed problem breakdown
+├── Dockerfile                      ← Container image
+├── docker-compose.yml              ← Local multi-service stack
+├── pytest.ini                      ← Test config
+├── requirements.txt                ← Runtime dependencies
+├── requirements-dev.txt            ← Dev / test dependencies
+├── .env.example                    ← Environment variable template
+├── .github/
+│   └── workflows/
+│       └── tests.yml               ← CI test workflow
 ├── src/
 │   ├── main.py                     ← Entry point
-│   ├── ingestion/                  ← PDF extraction, embedding & indexing pipeline
-│   │   ├── __init__.py
-│   │   ├── extract.py
-│   │   ├── embed.py
-│   │   └── pipeline.py
-│   ├── app/                        ← Streamlit chat UI
-│   │   ├── __init__.py
-│   │   └── streamlit_app.py
-│   └── shared/                     ← Config & pipeline contracts
-│       ├── __init__.py
-│       ├── config.py
-│       ├── pipeline_interface.py
-│       └── mock_pipeline.py
+│   ├── ingestion/                  ← Scrape, extract, chunk, embed, retrieve & generate
+│   │   ├── scraper.py, scraper_listing.py
+│   │   ├── extract.py, normalize.py, chunk.py, embed.py
+│   │   ├── retrieve.py, retrieve_local.py
+│   │   ├── translate.py, clarify.py, generate.py, vfm.py
+│   │   └── orchestrate.py, pipeline.py
+│   ├── api/                        ← FastAPI backend
+│   │   ├── main.py, messaging.py, webhooks.py
+│   │   ├── middleware/             ← auth, identity, rate_limit, anti_bot
+│   │   └── routes/                 ← sessions, sources, stats, disputes, validation
+│   ├── admin/
+│   │   └── dashboard.py            ← Admin dashboard
+│   ├── app/
+│   │   └── streamlit_app.py        ← Streamlit chat UI
+│   └── shared/                     ← Config, DB, models, language & pipeline contracts
+│       ├── config.py, database.py, models.py, messages.py, language.py
+│       └── pipeline_interface.py, mock_pipeline.py
+├── scripts/                        ← Ingest, migrate, seed, retention, smoke & debug tools
+├── tests/                          ← Pytest suite
 ├── notebooks/
 │   └── exploration.ipynb           ← Experiments & prototyping
-├── data/
-│   └── .gitkeep                    ← Sample / reference data
-├── requirements.txt
-├── .env.example
+├── docs/                           ← Problem statement, API contract, deploy & sprint notes
+├── data/                           ← Sample county PDFs (nakuru_audit_report, nakuru_birr_q1)
+├── web/
+│   └── splash/index.html           ← Landing page
 ├── .gitignore
+├── .gitattributes
 └── LICENSE
 ```
 
